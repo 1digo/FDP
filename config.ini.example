@@ -1,0 +1,3 @@
+[SITE]
+SECRET_KEY =
+DEBUG = True

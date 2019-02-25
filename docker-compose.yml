@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11.2
+    environment:
+      POSTGRES_DB: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./tmp:/tmp
+
+  runserver:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - 8002:8002
+    command: python manage.py runserver 0.0.0.0:8002
+    depends_on:
+      - postgres
+
+volumes:
+  db_data:

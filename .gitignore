@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.python-version
+*.mo
+.cache
+
+# Django stuff:
+*.log
+logs/
+
+# local settings
+FDP/settings/local.py
+
+# PyCharm
+.idea/
+env/
+.env
+venv/
+.venv/
+
+# config files
+/config.ini
+
+# Temporary files
+tmp/
